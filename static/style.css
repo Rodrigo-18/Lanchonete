@@ -1,0 +1,224 @@
+/* Reset e estilos base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff8f0;
+    padding: 20px;
+    color: #333;
+}
+
+/* Cabeçalho */
+h1, h2 {
+    text-align: center;
+    color: #ff4500;
+    margin-bottom: 20px;
+}
+
+/* Botão do carrinho fixo */
+.botao-carrinho {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+    z-index: 100;
+}
+
+.botao-carrinho:hover {
+    transform: scale(1.05);
+}
+
+/* Container de cards */
+.cardapio-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+/* Card de item */
+.item-card {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 15px;
+    width: 220px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.item-card:hover {
+    transform: translateY(-5px);
+}
+
+.item-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+/* Botão adicionar ao carrinho */
+.botao-adicionar {
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin-top: 5px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.botao-adicionar:hover {
+    transform: scale(1.05);
+}
+
+/* Textarea observação */
+.item-card textarea {
+    width: 100%;
+    border-radius: 8px;
+    padding: 5px;
+    margin-top: 5px;
+    resize: none;
+    font-family: Arial, sans-serif;
+}
+
+/* ===================================
+   Banner Interativo do Quiz
+   =================================== */
+.quiz-banner-container {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.quiz-card-interativo {
+    background: linear-gradient(135deg, #ff9900, #ff4500);
+    padding: 25px;
+    border-radius: 15px;
+    max-width: 700px;
+    margin: 0 auto;
+    color: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.quiz-card-interativo:hover {
+    transform: translateY(-5px);
+}
+
+.quiz-card-interativo h2 {
+    color: #ffffff;
+    margin-bottom: 8px;
+    font-size: 24px;
+}
+
+.quiz-card-interativo p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    opacity: 0.95;
+}
+
+.quiz-link-imagem {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+}
+
+.quiz-link-imagem img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.quiz-link-imagem:hover img {
+    transform: scale(1.06);
+}
+
+.quiz-overlay-texto {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.quiz-link-imagem:hover .quiz-overlay-texto {
+    background-color: #28a745;
+    transform: translateX(-50%) scale(1.05);
+}
+
+/* Media Queries para responsividade */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .item-card {
+        width: 45%;
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .cardapio-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .item-card {
+        width: 90%;
+    }
+
+    .botao-carrinho {
+        padding: 10px 16px;
+        top: 10px;
+        right: 10px;
+    }
+
+    .item-card img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .quiz-card-interativo {
+        padding: 15px;
+        width: 95%;
+    }
+
+    .quiz-overlay-texto {
+        font-size: 13px;
+        padding: 8px 16px;
+        bottom: 10px;
+    }
+}

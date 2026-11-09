@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Descarte Correto do Óleo de Cozinha</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <a href="{{ url_for('index') }}" class="botao-carrinho" style="right: auto; left: 20px;">
+        ⬅ Voltar ao Cardápio
+    </a>
+
+    <h1>🌿 Quiz: Descarte Correto do Óleo</h1>
+
+    <div class="quiz-pagina-container" style="max-width: 700px; margin: 40px auto; background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        <p style="text-align: center; margin-bottom: 25px; color: #666;">Responda às perguntas abaixo sobre a preservação ambiental, teste seus conhecimentos e garanta sua pontuação no projeto!</p>
+
+
+        <form action="{{ url_for('processar_quiz') }}" method="POST">
+
+            <!-- Pergunta 1 -->
+            <div class="quiz-pergunta-card" style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
+                <p><strong>1. Qual é a maneira correta de descartar o óleo de cozinha usado?</strong></p>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq1" value="A" required> A) Despejar na pia.</label>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq1" value="B"> B) Colocar em uma garrafa PET bem fechada e levar a um ponto de coleta.</label>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq1" value="C"> C) Jogar no vaso sanitário.</label>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq1" value="D"> D) Despejar diretamente na terra.</label>
+            </div>
+
+            <!-- Pergunta 2 -->
+            <div class="quiz-pergunta-card" style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
+                <p><strong>2. Por que não devemos jogar óleo de cozinha usado na pia?</strong></p>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq2" value="A" required> A) Porque pode causar entupimentos na tubulação.</label>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq2" value="B"> B) Porque aumenta a pressão da torneira.</label>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq2" value="C"> C) Porque altera a temperatura da água.</label>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq2" value="D"> D) Porque diminui a quantidade de água nas caixas.</label>
+            </div>
+
+            <!-- Pergunta 3 -->
+            <div class="quiz-pergunta-card" style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
+                <p><strong>3. O que devemos fazer antes de colocar o óleo usado em uma garrafa?</strong></p>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq3" value="A" required> A) Esperar esfriar completamente.</label>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq3" value="B"> B) Misturá-lo com água.</label>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq3" value="C"> C) Acrescentar detergente.</label>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq3" value="D"> D) Aquecer novamente.</label>
+            </div>
+
+            <!-- Pergunta 4 -->
+            <div class="quiz-pergunta-card" style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
+                <p><strong>4. Qual recipiente é mais indicado para armazenar o óleo usado em casa?</strong></p>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq4" value="A" required> A) Um copo descartável sem tampa.</label>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq4" value="B"> B) Uma sacola plástica aberta.</label>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq4" value="C"> C) Uma garrafa PET limpa, seca e com tampa.</label>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq4" value="D"> D) Uma embalagem de papelão.</label>
+            </div>
+
+            <!-- Pergunta 5 -->
+            <div class="quiz-pergunta-card" style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
+                <p><strong>5. O descarte incorreto do óleo de cozinha pode causar qual problema ambiental?</strong></p>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq5" value="A" required> A) Aumento da fertilidade dos rios.</label>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq5" value="B"> B) Melhoria da qualidade do solo.</label>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq5" value="C"> C) Redução da poluição da água.</label>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq5" value="D"> D) Contaminação da água e do solo.</label>
+            </div>
+
+            <!-- Pergunta 6 -->
+            <div class="quiz-pergunta-card" style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
+                <p><strong>6. O que pode ser produzido a partir do óleo de cozinha usado após a reciclagem?</strong></p>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq6" value="A" required> A) Água potável e sal.</label>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq6" value="B"> B) Sabão e biodiesel.</label>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq6" value="C"> C) Papel e vidro.</label>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq6" value="D"> D) Areia e cimento.</label>
+            </div>
+
+            <!-- Pergunta 7 -->
+            <div class="quiz-pergunta-card" style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
+                <p><strong>7. Onde devemos levar a garrafa com óleo de cozinha usado?</strong></p>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq7" value="A" required> A) Ao lixo reciclável comum, sem verificar as orientações locais.</label>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq7" value="B"> B) A um ponto de coleta que receba óleo usado.</label>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq7" value="C"> C) A um bueiro próximo.</label>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq7" value="D"> D) A um terreno vazio.</label>
+            </div>
+
+            <!-- Pergunta 8 -->
+            <div class="quiz-pergunta-card" style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
+                <p><strong>8. Por que é importante manter a garrafa de óleo usado bem fechada?</strong></p>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq8" value="A" required> A) Para aumentar a quantidade de óleo.</label>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq8" value="B"> B) Para permitir que o óleo evapore.</label>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq8" value="C"> C) Para transformar o óleo em água.</label>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq8" value="D"> D) Para evitar vazamentos e derramamentos.</label>
+            </div>
+
+            <!-- Pergunta 9 -->
+            <div class="quiz-pergunta-card" style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
+                <p><strong>9. Qual atitude demonstra consciência ambiental em relação ao óleo de cozinha?</strong></p>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq9" value="A" required> A) Descartar o óleo na rede de esgoto.</label>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq9" value="B"> B) Jogar o óleo no quintal.</label>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq9" value="C"> C) Armazenar e encaminhar o óleo para reciclagem.</label>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq9" value="D"> D) Misturar o óleo com o lixo orgânico.</label>
+            </div>
+
+            <!-- Pergunta 10 -->
+            <div class="quiz-pergunta-card" style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
+                <p><strong>10. Qual é a principal importância de realizar o descarte correto do óleo de cozinha usado?</strong></p>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq10" value="A" required> A) Aumentar o consumo de produtos descartáveis.</label>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq10" value="B"> B) Facilitar o descarte no esgoto.</label>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq10" value="C"> C) Evitar a reciclagem de resíduos.</label>
+                <label style="display: block; margin: 6px 0; cursor: pointer;"><input type="radio" name="perq10" value="D"> D) Preservar o meio ambiente e possibilitar o reaproveitamento.</label>
+            </div>
+
+
+            <div class="quiz-pergunta-card" style="margin-bottom: 25px;">
+                <p><strong>Deixe uma sugestão ou comentário sobre o projeto:</strong></p>
+                <textarea name="sugestao_quiz" placeholder="Digite aqui..." style="width: 100%; border-radius: 8px; padding: 10px; margin-top: 8px; resize: none; font-family: Arial, sans-serif; border: 1px solid #ccc;" rows="3"></textarea>
+            </div>
+
+
+            <button type="submit" class="botao-adicionar" style="width: 100%; padding: 12px; font-size: 16px; border-radius: 25px; cursor: pointer;">
+                Enviar Respostas e Calcular Pontos 🚀
+            </button>
+        </form>
+    </div>
+
+</body>
+</html>
